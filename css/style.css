@@ -159,6 +159,21 @@ p, a {
     grid-gap: 1rem;
 }
 
+.grid-container-main .grid-item a img {
+    max-width: 15rem;
+    height: 15rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #000000;
+    opacity: 0.7;
+    object-fit: cover;
+    transform: none;
+    transition: transform 100ms linear;
+}
+
+.grid-container-main .grid-item a:hover img {
+    transform: scale(1.05);
+}
+
 .grid-item img {
     max-width: 15rem;
     height: 15rem;
