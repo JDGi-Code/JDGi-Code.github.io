@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>PaceAware App | J.D. Gi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+    <!-- Navigation Bar Section -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="left">Home</a>
+            <div class="right">
+                <a href="work.html">Work</a>
+                <a href="resume.html">Resume</a>
+                <a href="freetime.html">Free Time</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <section id="content" class="body-container">
+        <h1>PaceAware Dementia Caregiver Tool</h1>
+        <h2>
+            A mobile app in Python.
+        </h2>
+        <div class="roles">
+            <div class="roles-text">
+                <h3>Roles</h3>
+                <p>Project Lead
+                    <br>Interface Designer
+                    <br>Lead Researcher
+                </p>
+            </div>
+            <a class="roles-button"
+                href="http://www.google.com/url?q=http%3A%2F%2Fnothing&sa=D&sntz=1&usg=AOvVaw284xiYb4ToziI2i6iw1nrK"
+                target="_blank">
+                GitHub Files
+            </a>
+        </div>
+        <hr>
+        <h2>Project Purpose & Goal</h2>
+        <p>
+            Dementia impacts over 50 million people globally. Each year, 10 million more people are diagnosed with
+            dementia. Informal caregiving by family and friends makes up the majority of circumstances, and involves
+            constant monitoring for problematic behaviors such as wandering. Wandering behavior occurs when the
+            individual becomes restless and begins to walk without destination. This type of behavior can be dangerous,
+            leading to the individual becoming stranded, lost, and injured.
+        </p>
+        <p>
+            Dementia-induced wandering is often preceded by pacing activity, characterized by repetitive walking
+            patterns. If pacing can be detected, and a caregiver can be alerted to the activity, then it is possible
+            that intervention by a caregiver can prevent wandering behavior from commencing. This type of activity
+            monitoring can enhance caregiver independence, while also improving quality of life and safety for the
+            dementia-afflicted individual.
+        </p>
+        <p>
+            External Libraries & Files used:
+            <br>colorama: simple color for text output (green for not_pacing, yellow for pacing)
+            <br>playsound: this library plays a mp3 or wav file.
+            <br>alert file download: To minimize unintended stress, the selected file has a pleasant sound.
+        </p>
+
+        <h2>Application Files</h2>
+        <ol>
+            <li>
+                Accelmagno_maker.py
+                <br>This file is necessary to turn separate files - Accelerometer.csv and Magnetometer.csv - into one
+                single
+                file called AccelMagno.csv. The combined file is read as training data.
+                The function takes base_filename as a parameter.
+                It reads the accelerometer data from "Accelerometer.csv" and the magnetometer data from
+                "Magnetometer.csv"
+                within the specified base directory.
+                The 'time' column in both DataFrames is converted to datetime format using pd.to_datetime.
+                From there, a new DataFrame new_df is created with columns for time, accelerometer (x, y, z), and
+                magnetometer readings (x, y, z). The sensor values are rounded to 6 decimal places using round(6) to
+                force
+                the data into a uniform float32 format.
+                new_df is saved saved as "AccelMagno.csv" which is used for the training data.
+            </li>
+
+            <li>
+                squisher.py
+                <br>The AccelMagno.csv files from each of the training data activity types (sitting, standing, walking,
+                pacing)
+                are combined into two distinct categories - not_pacing and pacing.
+                In this way, multiple sessions of pacing could be combined to increase the data set for pacing, and all
+                the
+                non-pacing data could be combined as non-pacing activities.
+                This labeled data is used as training data.
+            </li>
+
+            <li>
+                pacing_detection.py
+                <br>This file performs the following tasks:
+                <br>calc_magnitude(data): performs the magnitude calculations.
+                <br>remove_noise(data, sampling_rate): removes the data noise.
+                <br>add_features(window): calculates features for accel and magno.
+                <br>extract_features(data, window_sec, sample_rate, activity): reformats the time column, resamples the
+                data
+                into windows, and calls add_features on the windows.
+                <br>train_tree(frames): performs an accuracy test on the data (result: 91% accuracy). This function also
+                writes
+                a model to a pickle dump.
+                <br>classify_live_window(df): calls all previous functions and reads the pickle.
+                <br>test_live_classifier: Read by the server file.
+            </li>
+
+            <li>
+                server.py
+                <br>This updated version of sensor_logger_listen.py reads signals from accelerometer and magnetometer
+                only. The
+                window is declared as 10 seconds and Hz is defined at 100.
+                This file calls classify_live_window and returns the status of the user as 'Detecting', which indicates
+                no
+                pacing behavior has been detected, and 'CAUTION: Pacing Detected', which indicates to the caregiver that
+                the
+                user has commenced a pacing behavior. I felt this was necessary, as a caregiver may miss the importance
+                of
+                the change in detected behavior unless there is a more pronounced distinction between the states.
+                Data Collection, Model Training, and Testing/ Analysis
+                15 minutes of sitting, standing, and walking activity were recorded separately and then grouped into a
+                single 'not_pacing' category. When detected, the program returns a green text stating "Detecting…"
+                because
+                returning exactly what the individual is doing at any given time (sitting, standing, or walking) seemed
+                to
+                encourage a 'surveillance' quality that is not desired. Pacing is classified as multiple magnetometer
+                heading changes within a 10-second window. When detected, the program returns a yellow text stating
+                "CAUTION: Pacing Detected", accompanied by a pleasant alert sound. This alert will prompt the caregiver
+                to
+                check in on the dementia-afflicted individual, and commence intervention techniques. This functionality
+                encourages increased independence for the caregiver by providing easily-recognizable changes in activity
+                detection, thereby improving quality of care for the individual who is in an informal care setting such
+                as a family home.
+            </li>
+        </ol>
+        <h2>Model Evaluation & Results</h2>
+        <ul>
+            <li>15 min of data collected for each type (sitting, standing, walking, pacing), combined into categories
+                'not_pacing' and 'pacing'. With over 61,000 windows, the model takes over 3 minutes to create.</li>
+            <li>Extracted Features: mean, quartiles, and stD from both sensors, accelerometer & magnetometer. </li>
+            <li>Decision Tree with depth 3 achieved zero entropy for at least one category on each level</li>
+            <li>Accuracy of 92%</li>
+            <li>Sitting appears to have poor classification, however this was deemed acceptable as it remains clearly
+                distinguished as 'not_pacing' </li>
+        </ul>
+
+        <figure class="project-img-small">
+            <img src="images/paceaware-eval.png" alt="App precision and recall performance">
+            <figcaption class="caption">Table 1: Evaluation by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 1: Model classification for individual activities. A recall of 1 for pacing suggests that the model
+            effectively captures all instances of pacing activity. However, recalls of .75 for sitting and .67 for
+            standing indicate slightly lower rates of correctly identifying these activities. Conversely, walking
+            exhibits a high recall of .96, signifying strong performance in accurately recognizing walking behavior.
+            Stationary activities might have lower recall than dynamic activities due to the complexity and variability
+            of motion patterns associated with the dynamic states. The subtle differences in sensor data during
+            sedentary actions could make it more challenging for the algorithm to accurately capture and classify these
+            activities, leading to a lower recall. On the other hand, dynamic activities typically exhibit more distinct
+            and recognizable motion patterns, facilitating a higher recall as the algorithm can more effectively discern
+            and identify these dynamic movements. Overall, it is deemed acceptable for there to be lower recall for the
+            individual activities, because the different states were later separated into two distinct categories:
+            pacing and not_pacing.
+        </p>
+        <figure class="project-img-small">
+            <img src="images/refined-paceaware-eval.png"
+                alt="A refined view of the app's precision and recall performance">
+            <figcaption class="caption">Table 2: Evaluation by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 2: Model classification for not_pacing and pacing categories. The algorithm's ability to accurately
+            identify instances of not_pacing activities appears notably strong, resulting in a high recall rate. In
+            contrast, the slightly lower recall for pacing activity might stem from the challenges in accurately
+            capturing all instances due to its specific motion patterns or variability compared to other activities.
+            This difference in recall rates indicates a performance difference in detecting different categories based
+            on their unique features.
+        </p>
+        <p>
+            Confusion matrix: Appearing below Table 2, the CM has two rows (top row is not_pacing, bottom is
+            pacing). The confusion matrix reflects a high count of true negatives and true positives, with a small
+            number of false classifications. This is highly encouraging. Although all activities were collected with the
+            same amount of time each (15 minutes), it appears that the model will benefit from an increased amount of
+            data in future iterations.
+            <br>TN: 28 instances of not_pacing correctly classified as not_pacing.
+            <br>FP: 1 instance of pacing incorrectly classified as not_pacing.
+            <br>FN: 2 instances of not_pacing incorrectly classified as pacing.
+            <br>TP: 12 instances of pacing correctly classified as pacing.
+        </p>
+        <figure class="project-img-small">
+            <img src="images/paceaware-decision-tree.png" alt="App's decision tree performance">
+            <figcaption class="caption">Table 2: Evaluation by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 3: This decision tree with a depth of 3 shows the clear distinction between pacing and not_pacing as
+            learned by the classifier. It is very motivating to see some leaves with an entropy of zero. Although this
+            implies the model is highly capable of classifying not_pacing vs. pacing activity, the results reinforce the
+            concept that more data would benefit the performance in future iterations.
+        </p>
+
+        <h2>Reflection</h2>
+        <p>
+            The most challenging component in this project was in integrating the two accelerometer and magnetometer.
+            Once I viewed the recordings from two sensors taken at once, I saw that they were separate zip files
+            containing dataframes that appeared to be nearly identical. This required data cleaning and changes to the
+            core functions (ie, calc_magnitude). This was very challenging at first and I wasn’t sure if I would be able
+            to do it, but once I did a little research into how this is done with arduino machines, I was able to do it
+            in my program. It was also a bit of an experiment to decide which features to use. I just threw everything
+            at it and the machine learning figured it out, however I think I would like to learn more deeply which
+            features are best for this specific application.
+        </p>
+        <p>
+            Although the program effectively detects pacing vs. not_pacing and offers a discrete feedback system,
+            improvements can be made. Searching online, I was unable to find examples of what dementia pacing looks
+            like. I could only find written descriptions of “anxiety-induced restless behavior”, for instance, a person
+            might imitate repeatedly performing tasks in the home. To imitate that, I tried to repeatedly perform tasks,
+            for instance walking between the kitchen sink and the front window. However, I'm not confident this is a
+            true depiction of what dementia pacing looks like. Therefore, I feel the program could be improved with
+            better pacing data.
+        </p>
+        <p>
+            Lastly, in future versions, it would be more beneficial to have the output from the patient's wearable
+            fed to a paired wearable worn by the caregiver. Given the time constraints of the project, and my own
+            limited experience with working with multiple devices, I chose the solution as output to my laptop screen.
+            This seemed acceptable, as a caregiver could monitor the activity on their own computer screen or workspace.
+            I am pleased with the outcome of the project and I look forward to opportunities to improve it further in
+            future iterations.
+        </p>
+        <hr>
+        <h3>References</h3>
+        <div class="biblio">
+            <p><a href="https://www.legacyhomecare.net/home-care-gold-canyon-az-pacing-and-wander">Coito, Jack. “Why
+                    Seniors with Dementia Pace and Wander.” Legacy Home Care,
+                    https://www.legacyhomecare.net/home-care-gold-canyon-az-pacing-and-wander/.</a>
+            </p>
+            <p><a href="https://www.who.int/news-room/fact-sheets/detail/dementia">“Dementia.” World Health Organization
+                    (WHO), 15 March 2023, https://www.who.int/news-room/fact-sheets/detail/dementia.</a>
+            </p>
+            <p><a
+                    href="https://makersportal.com/blog/2019/11/11/raspberry-pi-python-accelerometer-gyroscope-magnetometer">Hrisko,
+                    Joshua. “Accelerometer, Gyroscope, and Magnetometer Analysis with Raspberry Pi Part I: Basic
+                    Readings — Maker Portal.” Maker Portal, 15 November 2019,
+                    https://makersportal.com/blog/2019/11/11/raspberry-pi-python-accelerometer-gyroscope-magnetometer.</a>
+            </p>
+            <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3551235/">“Informal Caregivers of People with
+                    Dementia: Problems, Needs and Support in the Initial Stage and in Subsequent Stages of Dementia: A
+                    Questionnaire Survey.” NCBI, 15 January 2013,
+                    https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3551235/.</a>
+            </p>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <nav class="footer-nav">
+            <a href="index.html" class="left">
+                <img src="images/copyright-icon.png" class="icon-small" alt="Copyright Icon"> 2024 J.D. Gi
+            </a>
+            <!-- <a target="_blank" href="https://icons8.com/icon/447/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+            <address>
+                <div class="footer-right">
+                    <a href="mailto:jdgi.github@gmail.com">
+                        <img src="images/email-icon.png" alt="Email Link Icon">
+                    </a>
+                    <a href="https://github.com/JDGi-Code" target="_blank">
+                        <img src="images/github-icon.png" alt="GitHub Link Icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/j-d-gi/" target="_blank">
+                        <img src="images/linkedin-icon.png" alt="LinkedIn Link Icon">
+                    </a>
+                </div>
+            </address>
+        </nav>
+    </footer>
+
+
+</body>
+
+
+
+
+</html>
