@@ -33,9 +33,9 @@
         <h1>Let's connect! Send me a message here.</h1>
 
         <div class="contact-container">
-            <form>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="7bf73e1d-8669-4aed-8d2e-31a9a7ea99ea">
                 <h2>Contact Form</h2>
-
 
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Your name..">
@@ -48,6 +48,8 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" placeholder="Write something.."></textarea>
 
+                <!-- hCaptcha Spam Protection -->
+                <div class="h-captcha" data-captcha="true"></div>
 
                 <input type="submit" value="Submit">
             </form>
@@ -82,10 +84,9 @@
         </nav>
     </footer>
 
+    <!-- Required for hCaptcha -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
-
-
-
 
 </html>
