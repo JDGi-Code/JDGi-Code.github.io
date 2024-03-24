@@ -209,7 +209,7 @@ ul, ol, li, p, a {
 /* Page Content Section */
 
 .body-container {
-    min-width: 320px;
+    max-width: 70%;
     min-height: 100vh;
     margin: 4rem 15rem;
     display: flex;
