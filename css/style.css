@@ -216,7 +216,7 @@ ul, ol, li, p, a {
 
 .grid-col-2 {
     display: grid;
-    max-width: 90%;
+    min-width: 50%;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -328,6 +328,7 @@ ul, ol, li, p, a {
 /* Resume Styles */
 .resume-skills {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .skill-icon {
