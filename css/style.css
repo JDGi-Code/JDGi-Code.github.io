@@ -40,7 +40,7 @@ body a:visited {
     color: #006020;
 }
 
-p, a {
+ul, ol, li, p, a {
     font-size: 0.9rem;
 }
 
@@ -215,8 +215,7 @@ p, a {
 
 .grid-col-2 {
     display: grid;
-    max-width: 50%;
-    min-width: 320px;
+    max-width: 90%;
     grid-template-columns: 1fr 1fr;
 }
 
