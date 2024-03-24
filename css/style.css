@@ -339,6 +339,26 @@ ul, ol, li, p, a {
     padding: 1rem;
 }
 
+.skill-icon-wrapper {
+    position: relative;
+}
+
+.skill-icon-wrapper .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 70%;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /* Free Time Styles */
 
