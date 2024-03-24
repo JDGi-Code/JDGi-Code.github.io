@@ -100,7 +100,7 @@ ul, ol, li, p, a {
     right: 0;
     margin: 1rem;
     padding: 0.5rem;
-    width: 5%;
+    min-width: 5%;
     /* Place button higher than the other elements */
     z-index: 3;
 }
