@@ -141,7 +141,7 @@ ul, ol, li, p, a {
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-    margin: 2rem;
+    /* margin: 2rem; */
 }
 
 .main-h2 {
