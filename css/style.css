@@ -342,6 +342,12 @@ ul, ol, li, p, a {
 /* ------------------------------------------------------------------------------------- */
 /* Free Time Styles */
 
+.grid-container-freetime {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
 .freetime-grid-item {
     display: flex;
     flex-direction: row;
