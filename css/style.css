@@ -1,10 +1,12 @@
 /* Global Styles */
 hr {
-    width: 50%;
-    text-align: left;
+    border: 0;
     margin-left: 0;
-    background-color: #92a2bd;
-    height: 1px;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(146, 162, 189, 1), rgba(146, 162, 189, 0));    
+    width: 90%;
+    /* background-color: #92a2bd; */
+    /* width: 50%; */
 }
 
 body {
