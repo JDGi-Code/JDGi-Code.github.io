@@ -218,6 +218,7 @@ ul, ol, li, p, a {
     display: grid;
     min-width: 50%;
     grid-template-columns: 1fr 1fr;
+    padding-right: 10%;
 }
 
 .grid-col-2 a {
