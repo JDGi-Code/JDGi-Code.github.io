@@ -382,6 +382,10 @@ ul, ol, li, p, a {
     row-gap: 3rem;
 }
 
+.grid-container-freetime a, p {
+    font-size: 0.8rem;
+}
+
 .freetime-grid-item {
     display: flex;
     flex-direction: row;
@@ -399,9 +403,9 @@ ul, ol, li, p, a {
 /* Contact Form Styles */
 .contact-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 30rem;
     margin: 0 auto;
-    padding: 15px;
+    padding: 1rem;
     box-shadow: 0 0 10px #000000;
 }
 
@@ -455,7 +459,7 @@ ul, ol, li, p, a {
     align-items: center;
     width: 100%;
     top: 0;
-    padding: 20px;
+    padding: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     background-color: #F5FB7D;
@@ -465,13 +469,13 @@ ul, ol, li, p, a {
 #footer .footer-right {
     display: flex;
     justify-content: space-between;
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 #footer a {
     color: #000000;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 0 1.25rem;
 }
 
 #footer img {
