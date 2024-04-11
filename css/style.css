@@ -36,10 +36,12 @@ body h3 {
 
 body a {
     color: #00505e;
+    text-decoration: none;
 }
 
 body a:visited {
     color: #00505e;
+    text-decoration: none;
 }
 
 ul, ol, li, p, a {
@@ -67,7 +69,6 @@ ul, ol, li, p, a {
     padding: 0 20px;
     text-decoration: none;
 }
-
 
 .navbar .right {
     display: flex;
@@ -144,7 +145,7 @@ ul, ol, li, p, a {
     /* margin: 2rem; */
 }
 
-.main-h2 {
+#main h2 {
     margin: 1rem;
 }
 
@@ -169,10 +170,6 @@ ul, ol, li, p, a {
     text-align: center;
     /* grid-gap: 1rem; */
 }
-/* 
-.grid-container-main .grid-item a {
-    margin: 0;
-} */
 
 .grid-container-main .grid-item a img {
     margin-bottom: 1rem;
@@ -190,22 +187,8 @@ ul, ol, li, p, a {
     transform: scale(1.05);
 }
 
-.grid-item img {
-    max-width: 15rem;
-    height: 15rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px #000000;
-    opacity: 0.7;
-    object-fit: cover;
-}
-
-.grid-item text, a {
-    text-decoration: none;
-}
-
 /* ------------------------------------------------------------------------------------- */
 /* Work Page Section */
-
 
 .grid-container .grid-item a img {
 margin-bottom: 1rem;
@@ -232,11 +215,12 @@ margin-bottom: 1rem;
     object-fit: cover;
 }
 
-.grid-item text, a {
+.grid-item text {
     text-decoration: none;
 }
 
 .grid-item a {
+    text-decoration: none;
     display: flex;
     margin: 1rem;
     padding: 1rem;
@@ -296,6 +280,7 @@ margin-bottom: 1rem;
     height: 3rem;
     background-color: #f4ff26;
     color: #000000;
+    font-weight: bold;
     border: none;
     border-radius: 1rem;
     margin: 3rem;
@@ -305,11 +290,11 @@ margin-bottom: 1rem;
     box-shadow: 0 0 10px #000000;
 }
 
-.roles-button {
+/* .roles-button {
     color: #000000;
     text-decoration: none;
     font-weight: bold;
-}
+} */
 
 .roles-button a:visited {
     color: #000000;
@@ -367,8 +352,8 @@ margin-bottom: 1rem;
     font-size: 0.9rem;
 }
 
-.biblio p, a {
-    font-size: 0.8rem;
+.biblio p, .biblio a {
+    font-size: 0.75rem;
 }
 
 /* ------------------------------------------------------------------------------------- */
@@ -412,8 +397,8 @@ margin-bottom: 1rem;
     row-gap: 3rem;
 }
 
-.grid-container-freetime a, p {
-    font-size: 0.8rem;
+.grid-container-freetime a, .grid-container-freetime p, .grid-container-freetime li {
+    font-size: 0.9rem;
 }
 
 .freetime-grid-item a {
