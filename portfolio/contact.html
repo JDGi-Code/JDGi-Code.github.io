@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Contact | J.D. Gi</title>
+
+    <link rel="icon" href="images/icons/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Navigation Bar Section -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="left">Home</a>
+            <nav class="right">
+                <a href="work.html">Work</a>
+                <a href="resume.html">Resume</a>
+                <a href="freetime.html">Free Time</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </nav>
+    </header>
+    <!-- Content Section -->
+    <section id="content" class="body-container">
+
+        <section class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="7bf73e1d-8669-4aed-8d2e-31a9a7ea99ea">
+                <h1>Let's connect!</h1>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Your email..">
+
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Write something.."></textarea>
+
+                <!-- hCaptcha Spam Protection -->
+                <label for="h-captcha-response">Captcha:</label>
+                <div class="h-captcha" data-captcha="true"></div>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <nav class="footer-nav">
+            <a href="../index.html" class="left">
+                <img src="images/icons/copyright-icon.png" class="icon-small" alt="Copyright Icon"> 2024 J.D. Gi
+            </a>
+            <address>
+                <div class="footer-right">
+                    <a href="mailto:jdgi.github@gmail.com">
+                        <img src="images/icons/email-icon.png" alt="Email Link Icon">
+                    </a>
+                    <a href="https://github.com/JDGi-Code" target="_blank">
+                        <img src="images/icons/github-icon.png" alt="GitHub Link Icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/j-d-gi/" target="_blank">
+                        <img src="images/icons/linkedin-icon.png" alt="LinkedIn Link Icon">
+                    </a>
+                </div>
+            </address>
+        </nav>
+    </footer>
+
+        <!-- Required for hCaptcha -->
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+
+</body>
+
+</html>

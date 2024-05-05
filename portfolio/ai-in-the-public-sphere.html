@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>AI in the Public Sphere | J.D. Gi</title>
+    <link rel="icon" href="images/icons/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Navigation Bar Section -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="left">Home</a>
+            <nav class="right">
+                <a href="work.html">Work</a>
+                <a href="resume.html">Resume</a>
+                <a href="freetime.html">Free Time</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </nav>
+    </header>
+
+    <section id="content" class="body-container">
+        <h1>AI Bots in the Public Sphere</h1>
+        <h2>
+            As posted to Twitter by Russia's <i>Internet Research Agency</i>
+            <br>between 2017 & 2018
+        </h2>
+        <div class="roles">
+            <section class="roles-text">
+                <h3>Roles</h3>
+                <p>Lead Researcher
+                </p>
+            </section>
+            <a class="roles-button" href="https://fivethirtyeight.com/features/why-were-sharing-3-million-russian-troll-tweets/"
+                target="_blank">
+                Source Article
+            </a>
+        </div>
+        <hr>
+        <h2>Background & Context</h2>
+        <p>
+            The dataset used in the FiveThirtyEight story "Why We're Sharing 3 Million Russian Troll Tweets" comprised a
+            total of 2,973,371 tweets from Twitter handles linked to the Russian "troll factory" called the Internet
+            Research Agency.
+            The original data set spanned November 2017 to June 2018, and was gathered by Clemson University researchers
+            using custom searches on Social Studio, a firm owned by Salesforce.
+        </p>
+        <p>
+            A selection of nearly 400,000 tweets were gathered from this original data set, and uploaded to Kaggle. The
+            dataset includes active links, with caution advised. These selections were analyzed on multiple dimensions:
+            Account holder language, account holder region, most common hashtags, and most common string terms. In the
+            following pages, these dimensions are evaluated for meaning.
+        </p>
+
+        <h2>Data Cleaning</h2>
+        <p>
+            Cleaning and formatting the data is a step necessary to produce accurate and meaningful visualizations. For
+            this step, the timestamps were formatted to a readable data object. Some data was cleaned from the original
+            Kaggle set, including 'publish_date' column, which has very little data overall, and any row where 'region'
+            or 'language' are not defined.
+            To enhance the readability of the charts, some changes were made: If the account had than 10,000 followers,
+            they have been grouped into a language category "other". This enhances the readability of the chart.
+            Likewise, if the account had less than 2000 followers, the region is grouped as "other". Once cleaned, the
+            observations are reduced from nearly 400,000 rows to 112427 rows.
+        </p>
+
+        <h2>Highcharter Visualizations</h2>
+        <figure class="project-img-small">
+            <img src="images/highcharter-graph.png" alt="Daily follower counts based on language or region">
+            <figcaption class="caption">Table 1: Highcharter Graph by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 1: This highcharter graph shows daily follower counts based on account language or region. Bots may
+            avoid languages with limited readership to maximize impact and avoid bot detection. Western European
+            languages dominate these results, aligning with the organization's goal of disrupting societies outside
+            Russia and Asia.
+        </p>
+
+        <figure class="project-img-small">
+            <img src="images/refined-highcharter-graph.png"
+                alt="A more granular inspection of follower count by language or region">
+            <figcaption class="caption">Table 2: Highcharter Graph by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 2: This highcharter table shows the languages of accounts with > 2000 followers. "Other" includes:
+            Bengali, Bulgarian, Catalan, Czech, Estonian, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian,
+            Japanese, Korean, Kurdish, Latvian, Macedonian, Malay, Pushto, Russian, Serbian, Simplified Chinese, Slovak,
+            Slovenian, Somali, Swedish, Tagalog (Filipino), Thai, Traditional Chinese, Ukrainian. This also reflects
+            that, despite being attributed to Russian bots, most account holders are in the United States.
+        </p>
+
+        <h2>Word Cloud & Hashtag Visualizations</h2>
+        <figure class="project-img-small">
+            <img src="images/word-cloud.png" alt="Word cloud of popular terms used by the bots">
+            <figcaption class="caption">Table 3: Word Cloud by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 3: This wordcloud (limit 80 terms) displays most frequent strings, with stopwords set to English. Some
+            single-character Cyrillic terms were unavoidable. These terms, recurring 100 times or more, emphasizes
+            political jargon like trump, president, state, politics, and obama. Contrasting concepts (man/woman,
+            life/killed, black/white, stop/go, never/now, weight/fitness), as well as direct commands (take, see, watch,
+            think, vote, look, know) reveal the operation's objective: influencing readers through polarizing concepts
+            and encouraging direct action.
+        </p>
+
+        <figure class="project-img-small">
+            <img src="images/hashtag-mapping.png" alt="Hashtags used by the bots">
+            <figcaption class="caption">Table 3: Hashtag Network by J.D. Gi</figcaption>
+        </figure>
+        <p>
+            Table 4: The hashtag network (limit 75 terms) reveals term frequency, with a min_freq set of 0.4 to exclude
+            infrequently-used hashtags. Again, this highlights politically-polarizing terms, ie maga, trumptrain, blm,
+            fergusonremembers. Bots integrate hashtags like soundcloud, hiphop, and meme trends to appear as genuine
+            human users. They also employ 'rage bait' content on topics like the Second Amendment ('2a') and All Cops
+            Are Bastards ('acab') to manipulate followers. Numerous hashtags with unclear significance, like 'arre --
+            ara', 'alis -- lis', 'amelin -- ameliss', and 'ade -- aded', may result from lost context or gibberish
+            generated by bots.
+        </p>
+
+        <h2>Reflection</h2>
+        <p>
+            The selection of this dataset was motivated by my recollection of the unfolding circumstances surrounding
+            Russian bots on social media, a topic I avidly followed during that period. My curiosity was piqued by the
+            prospect of delving into the data to discern the insights it might reveal.
+        </p>
+        <p>
+            Of particular note was the prevalence of missing elements within the dataset, prompting the exclusion of
+            over
+            200,000 rows due to the absence of language or region information. This raises questions, as it appears
+            counterintuitive that accounts would lack such fundamental attributes. The exploration of these omissions
+            warrants further inquiry to unveil the underlying reasons for this anomaly.
+        </p>
+        <p>
+            The use of flexdashboard posed significant challenges, particularly surrounding the successful rendering of
+            the
+            file. I ran into the problem of graphs being compressed to a single row of pixels, or appearing as code
+            instead
+            of illustrative figures. Mitigating this issue necessitated extensive rearrangement and independent
+            research.
+            Ultimately, my decision was to compartmentalize sections into their own pages, a strategy that proved
+            effective
+            in resolving the rendering challenges. I look forward to delving deeper into flexdashboard in future
+            projects.
+        </p>
+
+        <h3>References</h3>
+        <footer class="biblio">
+            <p><a href="https://www.kaggle.com/datasets/fivethirtyeight/russian-troll-tweets">
+                    Kaggle Dataset. "Russian Troll Tweets." Kaggle, 1 Aug. 2018,
+                    https://www.kaggle.com/datasets/fivethirtyeight/russian-troll-tweets.</a>
+            </p>
+        </footer>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <nav class="footer-nav">
+            <a href="../index.html" class="left">
+                <img src="images/icons/copyright-icon.png" class="icon-small" alt="Copyright Icon"> 2024 J.D. Gi
+            </a>
+            <address>
+                <div class="footer-right">
+                    <a href="mailto:jdgi.github@gmail.com">
+                        <img src="images/icons/email-icon.png" alt="Email Link Icon">
+                    </a>
+                    <a href="https://github.com/JDGi-Code" target="_blank">
+                        <img src="images/icons/github-icon.png" alt="GitHub Link Icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/j-d-gi/" target="_blank">
+                        <img src="images/icons/linkedin-icon.png" alt="LinkedIn Link Icon">
+                    </a>
+                </div>
+            </address>
+        </nav>
+    </footer>
+</body>
+
+</html>
