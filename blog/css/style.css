@@ -15,6 +15,8 @@ body {
     line-height: 1.6;
     word-wrap: break-word;
     letter-spacing: 0.04rem;
+    height: 100vh;
+    overflow: auto; 
 }
 
 body h1 {
@@ -201,7 +203,7 @@ ul, ol, li, p, a {
 /* Work Page Section */
 
 .grid-container .grid-item a img {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
     max-width: 15rem;
     height: 15rem;
     border-radius: 1rem;
@@ -247,7 +249,7 @@ margin-bottom: 1rem;
 
 .body-container {
     max-width: 60%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* margin: 4rem 15rem; */
     margin: 4rem auto;
     display: flex;
