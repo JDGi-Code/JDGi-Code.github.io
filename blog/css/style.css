@@ -15,8 +15,8 @@ body {
     line-height: 1.6;
     word-wrap: break-word;
     letter-spacing: 0.04rem;
-    height: 100vh;
-    overflow: auto; 
+    /* height: 100vh; */
+    /* overflow: auto;  */
 }
 
 body h1 {
