@@ -2,12 +2,13 @@ var pauseButton = document.getElementById('pauseButton')
 if (pauseButton) {
     pauseButton.addEventListener('click', function () {
         var video = document.getElementById('hero-video');
+        var imgElement = this.getElementsByTagName('img')[0];
         if (video.paused) {
             video.play();
-            this.textContent = "Pause"; // change button text to 'Pause'
+            imgElement.src="portfolio/images/icons/pause-button.png"; // change button text to 'Pause'
         } else {
             video.pause();
-            this.textContent = "Play"; // change button text to 'Play'
+            imgElement.src = "portfolio/images/icons/play-button.png"; // change button text to 'Play'
         }
     });
 }
