@@ -143,6 +143,10 @@ ul, ol, li, p, a {
     font-weight: bold;
 }
 
+#navbar-mobile {
+    display: none;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /* Homepage Section - Content */
 #main {

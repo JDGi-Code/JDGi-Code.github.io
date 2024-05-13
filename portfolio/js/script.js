@@ -27,4 +27,26 @@ skillIcons.forEach(skillIcon => {
     skillIcon.addEventListener('mouseleave', () => {
         skillIcon.removeChild(skillIcon.lastChild)
     })
-}) 
+})
+
+var hamburgerOpen = document.getElementById('hamburger-button-open');
+var nav = document.getElementById('navbar-burger');
+
+console.log(hamburgerOpen);
+console.log(nav)
+
+// hamburgerOpen.addEventListener('click', () => {
+//     console.log("click")
+//     nav.style.width = nav.style.width === "100vw" ? "0" : "100vw";
+//     nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+//     e.preventDefault()
+//     e.stopPropagation()
+// });
+//
+// hamburgerOpen.addEventListener('touchstart', (e) => {
+//     console.log("touchstart")
+//     nav.style.width = nav.style.width === "100vw" ? "0" : "100vw";
+//     nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+//     e.preventDefault()
+//     e.stopPropagation()
+// });
