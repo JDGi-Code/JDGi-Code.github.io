@@ -2,34 +2,22 @@
 @media (max-width: 600px) {
     body {
         padding: 0;
+        word-wrap: normal;
+        font-size: 1rem;
+        h1 {
+            font-size: 1rem;
+        }
+        h2 {
+            font-size: 1rem;
+        }
+        h3, p, a {
+            font-size: 0.8rem;
+        }
     }
-    .navbar {
+    #navbar {
         display: none;
     }
-    #navbar .right {
-        display: none;
-    }
-    /*.hamburger-button-open {*/
-    /*    display: block;*/
-    /*    position: absolute;*/
-    /*    !*top: 50px;*!*/
-    /*    top: 0;*/
-    /*    right: 0.5rem;*/
-    /*    !*font-size: 3rem;*!*/
-    /*    !*font-weight: bold;*!*/
-    /*}*/
-    /*.burger-menu {*/
-    /*    width: 0;*/
-    /*    display: none;*/
-    /*    position: fixed;*/
-    /*    justify-content: space-around;*/
-    /*    background-color: #f0ff00;*/
-    /*    height: 50px;*/
-    /*    align-items: center;*/
-    /*    font-weight: bold;*/
-    /*    z-index: 10;*/
-    /*}*/
-    .mobile-menu {
+    .mobile-menu, #navbar-mobile {
         width: 100vw;
         display: flex;
         position: fixed;
@@ -44,31 +32,29 @@
     .hero-content {
         padding: 2rem;
         text-align: center;
-        top: 50px;
     }
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+    #content .body-container h1{
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1rem;
+    }
+    .hero-content p, p {
+        font-size: 1rem;
     }
     #main h2 {
         text-wrap: nowrap;
     }
-    h2 {
-        font-size: 1.5rem;
+    h2, .mini-h2 {
+        font-size: 1rem;
     }
-    .mini-h2 {
-        font-size: 1.5rem;
+    ul, ol, li, a {
+        font-size: 1rem;
     }
-    p {
-        font-size: 1.2rem;
-    }
-    ul, ol, li, p, a {
-        font-size: 1.2rem;
-    }
-    #main .grid-container-main  {
-        display: flex;
-        flex-direction: column;
-    }
-    .grid-container {
+    #main .grid-container-main, .grid-container, .roles  {
         display: flex;
         flex-direction: column;
     }
@@ -80,16 +66,20 @@
     .grid-text {
         padding: 0;
     }
-    .roles {
-        display: flex;
-        flex-direction: column;
+    .grid-col-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+    .skill-icon {
+        width: 2rem;
     }
     .roles .roles-button {
-        width: 15rem;
-        height: 5rem;
+        width: 10rem;
+        height: 2rem;
+        margin: 1rem;
     }
     .footer-nav .left {
         display: none;
     }
 }
-

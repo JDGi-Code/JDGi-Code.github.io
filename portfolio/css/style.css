@@ -153,6 +153,10 @@ ul, ol, li, p, a {
     height: 100%;
 }
 
+.hero-content-mobile {
+    display: none;
+}
+
 .hero-content h1 {
     color: #ffffff;
     font-size: 4em;
