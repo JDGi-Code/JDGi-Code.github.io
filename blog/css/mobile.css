@@ -36,6 +36,14 @@
     .hero-content h1 {
         font-size: 2rem;
     }
+    .body-container {
+        max-width: 90%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     #content .body-container h1{
         font-size: 1rem;
     }
@@ -78,6 +86,10 @@
         width: 10rem;
         height: 2rem;
         margin: 1rem;
+    }
+    .project-img-large, .project-img-small {
+        max-width: 90%;
+        margin: 0;
     }
     .footer-nav .left {
         display: none;
