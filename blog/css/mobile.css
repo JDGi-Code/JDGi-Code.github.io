@@ -9,9 +9,10 @@
         }
         h2 {
             font-size: 1rem;
+            margin: 0;
         }
         h3, p, a {
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
     }
     #navbar {
@@ -41,8 +42,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /*justify-content: left;*/
     }
     #content .body-container h1{
         font-size: 1rem;
@@ -66,18 +66,40 @@
         display: flex;
         flex-direction: column;
     }
+    .grid-container {
+        row-gap: 1rem;
+    }
+    .grid-container .grid-item a img {
+        margin: auto;
+        max-width: 15rem;
+        height: 15rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px #000000;
+        opacity: 0.7;
+        object-fit: cover;
+    }
     .grid-item a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
     .grid-text {
         padding: 0;
     }
     .grid-col-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+    }
+    .grid-col-2 a {
+        display: flex;
+        margin: auto 0 auto auto;
+        border-style: none;
+        border-radius: 0;
+        border-width: 0;
+        padding: 0;
     }
     .skill-icon {
         width: 2rem;
@@ -88,8 +110,7 @@
         margin: 1rem;
     }
     .project-img-large, .project-img-small {
-        max-width: 90%;
-        margin: 0;
+        margin: auto;
     }
     .footer-nav .left {
         display: none;
