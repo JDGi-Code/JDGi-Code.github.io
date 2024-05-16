@@ -112,6 +112,25 @@
     .project-img-large, .project-img-small {
         margin: auto;
     }
+    .resume-skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .skill-icon {
+        padding: 0.5rem;
+        /*width: 100%;*/
+    }
+
+    .skill-icon-wrapper {
+        position: relative;
+    }
+
+    .skill-icon-wrapper .overlay {
+        display: none;
+    }
+
     .footer-nav .left {
         display: none;
     }
