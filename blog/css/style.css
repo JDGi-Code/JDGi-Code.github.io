@@ -350,7 +350,7 @@ ul, ol, li, p, a {
     max-width: 80%;
 }
 
-.project-img-v-small {
+.project-img-v-small, .project-img-tiny {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -363,6 +363,9 @@ ul, ol, li, p, a {
     max-width: 50%;
 }
 
+.project-img-tiny img {
+    max-width: 30%;
+}
 
 .figure {
     display: flex;
