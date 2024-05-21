@@ -345,7 +345,7 @@ margin-bottom: 1rem;
 .grid-container {
     display: flex;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 1rem;
 }
 
 .grid-text {
@@ -434,7 +434,7 @@ margin-bottom: 1rem;
 .grid-container-freetime {
     display: flex;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 1rem;
 }
 
 .grid-container-freetime a, .grid-container-freetime p, .grid-container-freetime li {

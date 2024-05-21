@@ -322,7 +322,7 @@ ul, ol, li, p, a {
 .grid-container {
     display: flex;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 1rem;
 }
 
 .grid-text {
@@ -393,35 +393,6 @@ ul, ol, li, p, a {
 
 /* ------------------------------------------------------------------------------------- */
 /* Resume Styles */
-/*.resume-skills {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*}*/
-
-/*.skill-icon {*/
-/*    width: 3rem;*/
-/*    padding: 1rem;*/
-/*}*/
-
-/*.skill-icon-wrapper {*/
-/*    position: relative;*/
-/*}*/
-
-/*.skill-icon-wrapper .overlay {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: flex-end;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background-color: #ffffff;*/
-/*    opacity: 70%;*/
-/*    text-align: center;*/
-/*    font-size: 0.8rem;*/
-/*    font-weight: bold;*/
-/*}*/
 .resume-skills {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -459,7 +430,7 @@ ul, ol, li, p, a {
 .grid-container-freetime {
     display: flex;
     flex-direction: column;
-    row-gap: 3rem;
+    row-gap: 1rem;
 }
 
 .grid-container-freetime a, .grid-container-freetime p, .grid-container-freetime li {
