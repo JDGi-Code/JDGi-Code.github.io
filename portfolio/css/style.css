@@ -401,7 +401,6 @@ margin-bottom: 1rem;
 .resume-skills {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .skill-icon {
