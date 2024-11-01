@@ -406,6 +406,7 @@ margin-bottom: 1rem;
 .skill-icon {
     width: 3rem;
     padding: 1rem;
+    filter: grayscale(75%);
 }
 
 .skill-icon-wrapper {
