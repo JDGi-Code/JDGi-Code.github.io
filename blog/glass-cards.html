@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glass Cards in Figma and CSS | J.D. Gi</title>
+    <link rel="icon" href="images/icons/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+</head>
+
+<body>
+<!-- Navigation Bar Section -->
+<header>
+    <nav id="navbar" class="navbar">
+        <a href="../index.html" class="left">Home</a>
+        <nav class="right">
+            <a href="../portfolio/work.html">Work</a>
+            <a href="../portfolio/resume.html">Resume</a>
+            <a href="../portfolio/freetime.html">Free Time</a>
+            <a href="blog.html">Thoughts</a>
+        </nav>
+    </nav>
+    <nav id="navbar-mobile" class="mobile-menu">
+        <a href="../index.html" class="left">Home</a>
+        <a href="../portfolio/work.html">Work</a>
+        <a href="../portfolio/resume.html">Resume</a>
+        <a href="blog.html">Thoughts</a>
+    </nav>
+</header>
+
+    <section id="content" class="body-container">
+        <h1>Glass Card Morphism in Figma</h1>
+        <h2>
+            Visual effects for business cards, headers, and more - A simple, 30-minute project that anyone can do regardless of experience level.
+        </h2>
+        <div class="roles">
+            <section class="roles-text">
+                <h3>December 2024</h3>
+            </section>
+        </div>
+        <hr>
+        <figure class="project-img-small">
+            <img src="images/snowflakes2.png" alt="AI Art of a winter window with snowflakes and holiday cards.">
+            <figcaption class="caption">Image created with <a href="https://www.imagine.art/">Imagine.Art</a></figcaption>
+        </figure>
+        <h2>Why glass cards?</h2>
+        <p>
+            In my current role, I use Figma regularly to design analytical tools. I've become familiar with the features and capabilities I use every day, but recently, I’ve been curious about pushing its potential beyond work-related tasks and my usual responsibilities. I see this exercise as an opportunity to stretch my creativity, challenge my skills, and discover new and interesting ways to use Figma.
+        </p>
+        <p>
+            Although pretty, glass cards pose concerns when used in design. Because they use features such as semi-transparent backgrounds, blurred effects, and low contrast, glass cards can present significant accessibility challenges for screen readers and users with low vision. For screen readers, the visual emphasis of glass cards doesn't translate into clear, structured HTML elements, and so are difficult to interpret and navigate. For low-vision users, the combination of transparency and blurred effects can reduce readability by creating poor text-background contrast. As a result, I believe glass cards should be used sparingly and with accessibility features such as proper labeling for screen readers such a alt appropriate alt text.
+        </p>
+        <h2>Easy Designs in Figma</h2>
+        <p>
+            Figma is designed to be intuitive and accessible, making it easy to create objects regardless of your experience level. The most challenging aspect of recreating this project might be locating specific features in the interface, as Figma frequently updates its UI. A quick google search with your results limited to the previous 6 months should clear up any challenges you might have in locating where certain commands are located in the UI. All the features you need to complete this simple project are available in Figma's free tier and I have opted out of incorporating any 3rd party plugins.
+        </p>
+        <p>
+            In this example, I'm creating a 'business card', but the glass effect is highly versatile. You can apply it to a variety of use cases, including page headers, redirect cards, and product detail callouts.
+        </p>
+        <figure class="project-img-small">
+            <img src="images/figma-stage-1.png" alt="Step 1 of Figma process is a background with a rectangle on top.">
+            <figcaption class="caption">Step 1: Create a background and a base card object.</figcaption>
+        </figure>
+        <h3>Step 1: Format a Basic Layout</h3>
+        <p>
+            Since the business card itself is supposed to look like glass, it needs to sit on top of something that doesn't look like glass. First I set a background color that suits my aesthetic. I started with a vibrant background because the glass card will appear muted overtop it. Change the visual texture of this background to a gradient. This will make the card stand out more when it's sitting over it. Select a second color and move the blocks until the color gradient looks the way you like. Drop a shape in the middle and give it a rounded corner of 30. This inset rectangle will become the business card object.
+        </p>
+        <figure class="project-img-small">
+            <img src="images/figma-stage-2.png" alt="Step 2 of Figma process is create a glass effect on the inner rectangle.">
+            <figcaption class="caption">Step 2: Give the business card a glass effect.</figcaption>
+        </figure>
+        <h3>Step 2: Add Enhancing Effects to the Card</h3>
+        <p>
+            Fill the business card shape with white. To give it a glassy look, set the business card's white background to a color gradient where both color sare white at two different opacity levels. Step back and adjust as needed to achieve the basic glass look. You can also change the angle of the gradient by dragging the pins attached to the business card shape at the edges of the gradient. If your colored background has a horizontal linear gradient, changing the angle of the business card's semi-opaque white gradient will help to break up the lines and give it a more interesting look.
+        </p>
+        <p>
+            Still with your business card rectangle selected, add a background blur under "Effects" on the side menu. This will help it look even more like glass when you add text. Give the business card rectangle a Stroke and give that a linear gradient as well. Change the colors of the Stroke gradient to match the background's colors, and change the opacity of your gradient as desired. Add a Drop Shadow, and give that a blur effect. It should really be looking like glass now.
+        </p>
+        <figure class="project-img-small">
+            <img src="images/figma-stage-3.png" alt="Step 3 of Figma process is adding design elements like text and logos.">
+            <figcaption class="caption">Step 3 of creating a glass card in Figma.</figcaption>
+        </figure>
+        <h3>Step 3: Add Logos and Text</h3>
+        <p>
+            Before adding any design elements, set the business card object as a frame and select "clip content" so anything that runs off the edge will be clipped. At current, only Frames can clip content, so it has to be set before adding anything to ensure the content clips correctly. Add some design elements to the front of the business card like text and logos, whatever you want. Give the text a very subtle semi-opaque drop shadow to make it stand out more on the frosted background.
+        </p>
+        <p>
+            I want to add something that looks like the animated background on my home page header. I added a cluster of hexes by adding a polygon and setting the sides to 6, pasting it a bunch of times, and grouping them in random clusters of varying opacities and drop shadow saturations in the same color as the background. I love how it turned out! This is a cute business card.
+        </p>
+    </section>
+
+<!-- Footer Section -->
+<footer id="footer">
+    <nav class="footer-nav">
+        <a href="../index.html" class="left">
+            <img src="images/icons/copyright-icon.png" class="icon-small" alt="Copyright Icon"> 2024 J.D. Gi
+        </a>
+        <address>
+            <div class="footer-right">
+                <a href="mailto:jdgi.github@gmail.com">
+                    <img src="images/icons/email-icon.png" alt="Email Link Icon">
+                </a>
+                <a href="https://github.com/JDGi-Code" target="_blank">
+                    <img src="images/icons/github-icon.png" alt="GitHub Link Icon">
+                </a>
+                <a href="https://www.linkedin.com/in/j-d-gi/" target="_blank">
+                    <img src="images/icons/linkedin-icon.png" alt="LinkedIn Link Icon">
+                </a>
+            </div>
+        </address>
+    </nav>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
