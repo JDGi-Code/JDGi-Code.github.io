@@ -7,6 +7,15 @@ hr {
     width: 90%;
 }
 
+.glass-line {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #C802AD, #F9A200);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    margin: 1rem;
+}
+
 body {
     font-family: "Arimo", "Open Sans", sans-serif;
     background-color: #ffffff;
